@@ -1,0 +1,152 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+}
+
+.leftSection {
+  flex: 1;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1a202c;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.logo:hover {
+  color: #805ad5;
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+}
+
+.rightSection a {
+  margin-right: 2.5rem;
+  text-decoration: none;
+  color: #4a5568;
+  transition: color 0.3s;
+}
+
+.rightSection a:last-child {
+  margin-right: 1.5rem;
+}
+
+.rightSection a:hover {
+  color: #805ad5;
+}
+
+.userSection {
+  display: flex;
+  align-items: center;
+}
+
+.userIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.loginButton,
+.logoutButton {
+  background-color: #805ad5;
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.loginButton:hover,
+.logoutButton:hover {
+  background-color: #6b46c1;
+}
+
+.logoutButton {
+  padding: 0.25rem 0.75rem;
+}
+
+.activeLink {
+  color: #805ad5;
+  font-weight: bold;
+}
+
+.menuButton {
+  display: none;
+}
+
+/* iPad 和小屏幕设备 */
+@media (max-width: 1024px) {
+  .header {
+    padding: 1rem 1.5rem;
+  }
+
+  .rightSection a {
+    margin-right: 1.5rem;
+  }
+}
+
+/* 手机设备 */
+@media (max-width: 767px) {
+  .header {
+    padding: 1rem;
+  }
+
+  .menuButton {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .rightSection {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 1rem;
+  }
+
+  .menuOpen {
+    display: flex;
+  }
+
+  .rightSection a {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .userSection {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .userIcon {
+    margin-bottom: 0.5rem;
+  }
+
+  .loginButton,
+  .logoutButton {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+}

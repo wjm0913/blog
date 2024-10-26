@@ -1,42 +1,108 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* 重置默认样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+/* 设置根元素字体大小,方便使用 rem 单位 */
+html {
+  font-size: 16px;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  color: #333;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+/* 设置整体布局左右边距 */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
 }
 
+/* 链接样式 */
 a {
-  color: inherit;
+  color: #0070f3;
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
+a:hover {
+  text-decoration: underline;
+}
+
+/* 标题样式 */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* 段落样式 */
+p {
+  margin-bottom: 1em;
+}
+
+/* 列表样式 */
+ul, ol {
+  margin-bottom: 1em;
+  padding-left: 2em;
+}
+
+/* 图片样式 */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 表单元素样式 */
+input, textarea, select, button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* 按钮样式 */
+button {
+  cursor: pointer;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
   html {
-    color-scheme: dark;
+    font-size: 14px;
   }
+
+  .container {
+    padding: 0 20px;
+  }
+}
+
+/* 在文件末尾添加以下样式 */
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+/* 如果需要,可以为 container 类添加 padding-top 来为 HeaderView 留出空间 */
+.container {
+  padding-top: 60px; /* 根据您的 HeaderView 高度调整 */
 }

@@ -8,6 +8,7 @@
 /* 设置根元素字体大小,方便使用 rem 单位 */
 html {
   font-size: 16px;
+  height: 100%;
 }
 
 body {
@@ -18,14 +19,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
   color: #333;
+  height: 100%;
+  overflow: hidden; /* 防止出现双滚动条 */
 }
 
-/* 设置整体布局左右边距 */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 30px;
-}
 
 /* 链接样式 */
 a {
@@ -78,14 +75,9 @@ button {
   html {
     font-size: 14px;
   }
-
-  .container {
-    padding: 0 20px;
-  }
 }
 
-/* 在文件末尾添加以下样式 */
-
+/* 辅助类 */
 .flex {
   display: flex;
 }
@@ -102,7 +94,19 @@ button {
   flex-grow: 1;
 }
 
-/* 如果需要,可以为 container 类添加 padding-top 来为 HeaderView 留出空间 */
-.container {
-  padding-top: 60px; /* 根据您的 HeaderView 高度调整 */
+/* 滚动容器样式 */
+.scroll-container {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  padding-top: 65px; /* 根据 HeaderView 高度调整 */
+}
+
+.scroll-section {
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

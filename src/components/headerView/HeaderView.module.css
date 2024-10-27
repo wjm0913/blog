@@ -3,7 +3,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   position: fixed;
   top: 0;
@@ -19,13 +20,16 @@
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #1a202c;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
   text-decoration: none;
-  transition: color 0.3s;
+  transition: color 0.3s, text-shadow 0.3s;
 }
 
 .logo:hover {
-  color: #805ad5;
+  text-decoration: none;
+  color: #FEC3A6;
+  text-shadow: 0 0 5px rgba(254, 195, 166, 0.5);
 }
 
 .rightSection {
@@ -36,8 +40,8 @@
 .rightSection a {
   margin-right: 2.5rem;
   text-decoration: none;
-  color: #4a5568;
-  transition: color 0.3s;
+  color: #ffffff;
+  transition: color 0.3s, text-shadow 0.3s;
 }
 
 .rightSection a:last-child {
@@ -45,7 +49,8 @@
 }
 
 .rightSection a:hover {
-  color: #805ad5;
+  color: #FEC3A6;
+  text-shadow: 0 0 5px rgba(254, 195, 166, 0.5);
 }
 
 .userSection {
@@ -62,19 +67,22 @@
 
 .loginButton,
 .logoutButton {
-  background-color: #805ad5;
+  background-color: rgba(255, 255, 255, 0.2); /* 半透明白色背景 */
   color: white;
-  border: none;
-  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.5); /* 添加细边框 */
+  border-radius: 20px; /* 圆角 */
   padding: 0.5rem 1rem;
   font-size: 0.875rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px); /* 背景模糊效果 */
 }
 
 .loginButton:hover,
 .logoutButton:hover {
-  background-color: #6b46c1;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px); /* 轻微上浮效果 */
 }
 
 .logoutButton {
@@ -82,8 +90,9 @@
 }
 
 .activeLink {
-  color: #805ad5;
+  color: #FEC3A6 !important;
   font-weight: bold;
+  text-shadow: 0 0 5px rgba(254, 195, 166, 0.5);
 }
 
 .menuButton {
@@ -148,5 +157,18 @@
   .logoutButton {
     width: 100%;
     margin-top: 0.5rem;
+  }
+
+  .loginButton,
+  .logoutButton {
+    background-color: rgba(0, 0, 0, 0.1); /* 在移动端使用深色背景 */
+    color: #333; /* 在移动端使用深色文字 */
+    border-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .loginButton:hover,
+  .logoutButton:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
 }

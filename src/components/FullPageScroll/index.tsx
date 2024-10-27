@@ -20,9 +20,9 @@ interface FullPageScrollProps {
 
 // 单个屏幕组件
 const Screen: React.FC<ScreenProps> = ({ children, background, backgroundImage, useGradient = true }) => (
-  <section 
+  <section
     className={`${styles.screen} ${useGradient ? styles.gradientBackground : ''}`}
-    style={{ 
+    style={{
       backgroundImage: useGradient ? background : `url(${backgroundImage})`,
       backgroundSize: useGradient ? '300% 300%' : 'cover',
       backgroundPosition: 'center',
@@ -33,7 +33,7 @@ const Screen: React.FC<ScreenProps> = ({ children, background, backgroundImage, 
   </section>
 );
 
-const FullPageScroll: React.FC<FullPageScrollProps> = ({
+const Index: React.FC<FullPageScrollProps> = ({
   screens,
   scrollPromptText = "↓ 向下滚动 ↓",
   navDotSize = 10,
@@ -67,7 +67,7 @@ const FullPageScroll: React.FC<FullPageScrollProps> = ({
           currentScreen++;
         } else if (event.deltaY < 0 && currentScreen > 0) {
           currentScreen--;
-        } 
+        }
         // 处理循环滚动：从最后一屏回到第一屏
         else if (event.deltaY > 0 && currentScreen === screenCount - 1) {
           setIsTransitioning(true);
@@ -78,7 +78,7 @@ const FullPageScroll: React.FC<FullPageScrollProps> = ({
             setIsTransitioning(false);
             setShowScrollPrompt(true);
           }, transitionDuration);
-        } 
+        }
         // 处理循环滚动：从第一屏回到最后一屏
         else if (event.deltaY < 0 && currentScreen === 0) {
           setIsTransitioning(true);
@@ -150,8 +150,8 @@ const FullPageScroll: React.FC<FullPageScrollProps> = ({
         )}
         {/* 渲染所有屏幕 */}
         {screens.map((screen, index) => (
-          <Screen 
-            key={index} 
+          <Screen
+            key={index}
             background={screen.background}
             backgroundImage={screen.backgroundImage}
             useGradient={screen.useGradient !== false} // 默认为 true
@@ -164,4 +164,4 @@ const FullPageScroll: React.FC<FullPageScrollProps> = ({
   );
 };
 
-export default FullPageScroll;
+export default Index;

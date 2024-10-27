@@ -1,4 +1,4 @@
-'use client';
+ 
 /**
  *
  * @name:
@@ -12,7 +12,7 @@ import { useScrollingTitle } from '@/hooks/useScrollingTitle';
 import Index from '@/components/FullPageScroll';
 
 const ClientPage = () => {
-  const scrollingTitle = useScrollingTitle('welcome to 魏建明 bizarre blog。 ');
+  const scrollingTitle = useScrollingTitle(document.title);
 
   useEffect(() => {
     // 初始设置标题

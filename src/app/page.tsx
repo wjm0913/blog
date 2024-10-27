@@ -12,7 +12,7 @@ import { generateCommonMetadata } from '@/utils/metadata';
 import ClientPage from "@/components/rootPathView/ClientPage";
 
 export async function generateMetadata(): Promise<Metadata> {
-  return generateCommonMetadata('首页', '11111这是我的博客首页');
+  return generateCommonMetadata('首页', '这是我的博客首页');
 }
 
 export default function Page() {

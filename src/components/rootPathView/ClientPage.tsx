@@ -7,25 +7,25 @@
  * @time: 2024-10-27 20:12:01
  *
  */
-import React, { useEffect } from 'react';
-import { useScrollingTitle } from '@/hooks/useScrollingTitle';
-import Index from '@/components/FullPageScroll';
+import React, {useEffect} from 'react';
+import {useScrollingTitle} from '@/hooks/useScrollingTitle';
+import FullPageScroll from '@/components/FullPageScroll';
+
+
 
 const ClientPage = () => {
-  const scrollingTitle = useScrollingTitle(document.title);
-
+  const scrollingTitle = useScrollingTitle(document && document.title || '');
+  
   useEffect(() => {
     // 初始设置标题
     document.title = scrollingTitle;
   }, [scrollingTitle]);
-
+  
   const screens = [
     {
       background: 'linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)',
       children: (
         <>
-          <h2>欢迎来到我的博客</h2>
-          <p>这里是第一屏，展示您的博客主题</p>
         </>
       ),
     },
@@ -47,7 +47,7 @@ const ClientPage = () => {
         </>
       ),
     },
-
+    
     {
       background: 'linear-gradient(266deg, #FBDA61 0%, #FF5ACD 50%, #ffffff 100%)',
       children: (
@@ -69,7 +69,7 @@ const ClientPage = () => {
   ];
   
   return (
-    <Index
+    <FullPageScroll
       screens={screens}
       scrollPromptText="↓ 继续滚动 ↓"
       navDotSize={12}

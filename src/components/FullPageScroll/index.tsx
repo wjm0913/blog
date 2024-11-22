@@ -33,7 +33,7 @@ const Screen: React.FC<ScreenProps> = ({ children, background, backgroundImage, 
   </section>
 );
 
-const Index: React.FC<FullPageScrollProps> = ({
+const ClientPage: React.FC<FullPageScrollProps> = ({
   screens,
   scrollPromptText = "↓ 向下滚动 ↓",
   navDotSize = 10,
@@ -129,19 +129,19 @@ const Index: React.FC<FullPageScrollProps> = ({
       <div className={`${styles.overlay} ${isTransitioning ? styles.active : ''}`} />
       <main className={styles.main} ref={mainRef}>
         {/* 导航指示器 */}
-        <div className={styles.navIndicator}>
-          {screens.map((_, index) => (
-            <div
-              key={index}
-              className={`${styles.navDot} ${index === activeScreen ? styles.active : ''}`}
-              style={{
-                width: navDotSize,
-                height: navDotSize,
-                margin: `${navDotSpacing}px 0`,
-              }}
-            />
-          ))}
-        </div>
+        {/*<div className={styles.navIndicator}>*/}
+        {/*  {screens.map((_, index) => (*/}
+        {/*    <div*/}
+        {/*      key={index}*/}
+        {/*      className={`${styles.navDot} ${index === activeScreen ? styles.active : ''}`}*/}
+        {/*      style={{*/}
+        {/*        width: navDotSize,*/}
+        {/*        height: navDotSize,*/}
+        {/*        margin: `${navDotSpacing}px 0`,*/}
+        {/*      }}*/}
+        {/*    />*/}
+        {/*  ))}*/}
+        {/*</div>*/}
         {/* 滚动提示 */}
         {showScrollPrompt && (
           <div className={styles.scrollPrompt}>
@@ -164,4 +164,4 @@ const Index: React.FC<FullPageScrollProps> = ({
   );
 };
 
-export default Index;
+export default ClientPage;

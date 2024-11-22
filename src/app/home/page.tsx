@@ -12,7 +12,9 @@
 
 const Home  =  () => {
   return <>
-    德拉斯科
+    <div style={{ paddingTop: 100, backgroundColor: "red" }}>
+      weqweqw
+    </div>
   </>
 }
 

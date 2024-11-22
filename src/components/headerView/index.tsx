@@ -25,7 +25,7 @@ const HeaderView = () => {
   }, []);
 
   const navItems = [
-    { label: '首页', path: '/' },
+    { label: '首页', path: '/home' },
     { label: '技术日志', path: '/technologyLog' },
     { label: '关于', path: '/about' },
     // 可以根据需要添加更多导航项
